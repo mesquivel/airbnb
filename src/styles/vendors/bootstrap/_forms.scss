@@ -1,0 +1,181 @@
+form {
+  .error {
+    color: $color-legalpurple;
+    margin-top: rem-calc(15px);
+    @include eyebrow2(none);
+  }
+
+  .text {
+    margin: rem-calc(15px) 0;
+
+    input {
+      &:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([type="button"]) {
+        background-color: $color-white;
+        border: rem-calc(1px) solid $color-gray;
+        box-shadow: none;
+        color: $color-darkgray;
+        display: block;
+        height: rem-calc(100px);
+        padding: 0 rem-calc(40px);
+        text-transform: uppercase;
+        width: 100%;
+        @include eyebrow1;
+        @include inputPlaceholder {
+          color: $color-darkgray;
+        }
+
+        // Accessibility - Focus
+        &:focus {
+          @include outline;
+        }
+
+        &.zip-code {
+          width: 80%;
+        }
+      }
+
+      &::-ms-clear {
+        display: none;
+      }
+    }
+
+    textarea {
+      background-color: $color-white;
+      border: rem-calc(1px) solid $color-gray;
+      box-shadow: none;
+      color: $color-darkgray;
+      height: rem-calc(198px);
+      padding: rem-calc(22px) rem-calc(40px);
+      resize: none;
+      text-transform: uppercase;
+      width: 100%;
+
+      @include eyebrow1;
+      @include inputPlaceholder {
+        color: $color-darkgray;
+      }
+
+      // Accessibility - Focus
+      &:focus {
+        @include outline;
+      }
+
+    }
+  }
+
+  // Start Checkboxes Inputs
+  .checkbox {
+
+    align-items: center;
+    display: flex;
+    height: rem-calc(32px);
+    justify-content: flex-start;
+
+    input[type="checkbox"] {
+      cursor: pointer;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      top: rem-calc(2px);
+      width: 100%;
+      z-index: 1;
+
+      + label {
+        padding-left: rem-calc(40px);
+        padding-top: rem-calc(3px);
+        text-transform: uppercase;
+        @include eyebrow1;
+
+        &::before {
+          border: rem-calc(1px) solid $color-gray;
+          content: '';
+          height: rem-calc(30px);
+          left: 0;
+          position: absolute;
+          top: rem-calc(2px);
+          width: rem-calc(30px);
+        }
+      }
+
+      &:focus {
+        + label::before {
+          outline: rem-calc(2px) solid $color-black;
+        }
+      }
+
+      &:active {
+        + label::before {
+          background: $color-midgray !important;
+        }
+      }
+
+      &:checked {
+        + label::after {
+          border-color: $color-legalorange;
+          border-style: solid;
+          border-width: 0 rem-calc(3px) rem-calc(3px) 0;
+          content: '';
+          height: rem-calc(16px);
+          left: rem-calc(10px);
+          position: absolute;
+          top: rem-calc(6px);
+          width: rem-calc(9px);
+          @include rotate(40deg);
+        }
+
+        + label::before {
+          background-color: $color-lightgray;
+        }
+      }
+
+      // Accessibility - Focus
+      &:focus {
+        + label::before {
+          @include outline;
+        }
+      }
+    }
+
+    .error {
+      margin-top: rem-calc(22px);
+    }
+  }
+
+  .zip-code-input {
+    position: relative;
+    z-index: 1;
+
+    > :focus {
+      position: relative;
+      z-index: 2;
+    }
+
+    .zip-code {
+      float: left;
+    }
+
+    .btn-primary {
+      border-left: 0;
+      border: rem-calc(1px) solid #E8E8E8;
+      box-shadow: none;
+      float: left;
+      height: rem-calc(100px);
+      padding: 0;
+      width: 20%;
+
+      &:hover {
+        top: 0;
+      }
+    }
+
+    .btn-arrow-middle {
+      left: 50%;
+      padding-left: rem-calc(4px);
+      padding-top: rem-calc(5px);
+      right: auto;
+      top: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+  }
+
+}

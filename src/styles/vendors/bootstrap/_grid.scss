@@ -1,0 +1,19 @@
+//=====================================================================================
+//===== OVERRIDE BOOTSTRAP GRID
+
+.container-fluid {
+  @include breakpoint('phone') {
+    padding-left: rem-calc($body-padding-mobile);
+    padding-right: rem-calc($body-padding-mobile);
+  }
+
+  @include breakpoint('tablet') {
+    padding-left: rem-calc($body-padding-tablet);
+    padding-right: rem-calc($body-padding-tablet);
+  }
+
+  @include breakpoint('tablet-up') {
+    padding-left: rem-calc($body-padding-desktop);
+    padding-right: rem-calc($body-padding-desktop);
+  }
+}

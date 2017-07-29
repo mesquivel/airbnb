@@ -1,0 +1,102 @@
+.modal-dialog {
+  margin: 0;
+  position: relative;
+  width: 100vw;
+}
+
+.modal-content {
+  border-radius: 0;
+  padding-bottom: rem-calc(40px);
+
+  .modal-header {
+    padding:  rem-calc(55px) rem-calc(36px) rem-calc(15px);
+    position: relative;
+
+    .close {
+      background: none;
+      border: 0;
+      margin: 0;
+      outline: 0;
+      position: absolute;
+      right: rem-calc(10px);
+      top: rem-calc(10px);
+      @include h4;
+    }
+
+    .modal-title {
+      font-size: rem-calc(42px);
+    }
+  }
+
+  .modal-body {
+    padding: 0 rem-calc(36px);
+
+    .error {
+      display: none;
+    }
+  }
+}
+
+.modal-backdrop.in {
+  background-color: $color-white;
+  opacity: 0.8;
+}
+
+@include breakpoint ('phone-up') {
+  .modal-backdrop.in {
+    background-color: $color-black;
+  }
+}
+
+@include breakpoint('tablet') {
+  .modal-dialog {
+    margin: rem-calc(140px) auto;
+    width: 80%;
+  }
+
+  .modal-content {
+
+    .modal-header {
+
+      .close {
+        color: $color-white;
+        right: rem-calc(-85px);
+        top: rem-calc(-15px);
+        @include h3;
+      }
+    }
+
+    .modal-header,
+    .modal-body {
+      padding-left: rem-calc(112px);
+      padding-right: rem-calc(112px);
+    }
+  }
+}
+
+@include breakpoint('tablet-up') {
+
+  .modal-dialog {
+    margin: rem-calc(140px) auto;
+    width: 80%;
+  }
+
+  .modal-content {
+
+    .modal-header {
+
+      .close {
+        color: $color-white;
+        right: rem-calc(-45px);
+        top: rem-calc(-15px);
+        @include h3;
+      }
+    }
+
+    .modal-header,
+    .modal-body {
+      padding-left: rem-calc(105px);
+      padding-right: rem-calc(105px);
+    }
+  }
+}

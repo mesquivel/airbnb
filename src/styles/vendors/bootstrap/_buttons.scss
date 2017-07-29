@@ -1,0 +1,171 @@
+//=====================================================================================
+//===== OVERRIDE BOOTSTRAP BUTTONS
+
+.btn {
+  border: 0;
+  position: relative;
+  white-space: normal;
+  @include eyebrow1;
+
+  .btn-arrow-middle {
+    @include verticalAlign;
+  }
+
+  &:focus,
+  &:active {
+    z-index: 1;
+    @include outline;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.btn-primary {
+  background-color: $color-white;
+  padding: rem-calc(40px) rem-calc(90px) rem-calc(40px) rem-calc(40px);
+  text-align: left;
+  color: $color-darkgray;
+  @include arrowColor($color-legalorange);
+  @include btnHoverAnimation;
+
+  &:hover {
+    @include arrowColor($color-legaldarkorange);
+  }
+
+  .btn-arrow-middle {
+    right: rem-calc(40px);
+  }
+
+  .arrow {
+    @include arrow(15px, 2px, 2px, 25px);
+
+    &.is-bottom {
+      top: rem-calc(7px);
+    }
+  }
+
+}
+
+.btn-secondary {
+  background-color: $color-lightgray;
+}
+
+.btn-terciary {
+  background-color: $color-black;
+}
+
+.btn-secondary,
+.btn-terciary,
+.btn-text {
+  padding: rem-calc(16px) rem-calc(20px);
+  text-decoration: underline;
+
+  @include all-pseudoclasses {
+    text-decoration: none;
+  }
+}
+
+.btn-secondary,
+.btn-text {
+  color: $color-legalorange;
+  @include arrowColor($color-legalorange);
+
+  @include all-pseudoclasses {
+    color: $color-legaldarkorange;
+    @include arrowColor($color-legaldarkorange);
+  }
+}
+
+.btn-terciary {
+  color: $color-white;
+  @include arrowColor($color-white);
+
+  @include all-pseudoclasses {
+    color: $color-gray;
+    @include arrowColor($color-gray);
+  }
+
+  &:focus {
+    outline-color: $color-midgray;
+  }
+}
+
+.btn-text {
+  .arrow {
+    margin-left: rem-calc(-17px);
+    margin-right: rem-calc(30px);
+    @include arrow(10px, 2px, 2px, 30px);
+  }
+}
+
+.btn-arrow,
+.btn-row {
+  background-color: $color-legalorange;
+
+  &:focus {
+    color: white;
+  }
+
+  &:active,
+  &:active:hover {
+    background-color: $color-totempole;
+  }
+
+  &:hover {
+    background-color: $color-legaldarkorange;
+    color: $color-white;
+  }
+}
+
+.btn-arrows {
+  box-shadow: 0 0 rem-calc(13px) $color-darkalto;
+  float: right;
+
+  .btn-arrow {
+    padding: rem-calc(50px) rem-calc(90px) rem-calc(50px) rem-calc(40px);
+    @include arrowColor($color-white);
+
+    .arrow {
+      @include arrow(15px, 2px, 2px, 80px);
+
+      &.is-bottom {
+        top: rem-calc(7px);
+      }
+    }
+
+    &:first-child {
+      .btn-arrow-middle {
+        left: rem-calc(40px);
+      }
+    }
+
+    &:last-child {
+      .btn-arrow-middle {
+        right: rem-calc(40px);
+      }
+    }
+  }
+}
+
+.btn-row {
+  background-color: $color-legalorange;
+  color: $color-white;
+  padding: rem-calc(40px);
+  text-align: center;
+
+  .icon {
+    font-size: rem-calc(16px);
+  }
+}
+
+//This is added to handle the states on iPad or touchscreens
+.is-touch {
+  .btn-arrow {
+    &:hover {
+      z-index: 1;
+      @include outline;
+    }
+  }
+}
