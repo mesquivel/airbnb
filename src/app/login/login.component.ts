@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component,OnInit,Input, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  login(user: HTMLInputElement, pass: HTMLInputElement): boolean {
+
+    let valid = user.value =='mario' && pass.value =='pass' ? alert('pase') : alert('error');
+
+    return false;
   }
 
 }
