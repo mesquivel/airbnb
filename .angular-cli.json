@@ -54,11 +54,7 @@
     }
   },
   "defaults": {
-<<<<<<< HEAD
     "styleExt": "scss",
-=======
-    "styleExt": "css",
->>>>>>> 701de39330ab2149288e962b0b47999c313fd8cb
     "component": {}
   }
 }
